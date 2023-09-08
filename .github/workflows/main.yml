@@ -4,13 +4,15 @@ on: [push]
 jobs:
   hello_world_job:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Test job to say hello
     steps:
-      - name: Hello world action step
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Hello name action step
         id: hello
-        uses: actions/hello-world-docker-action@v2
+        uses: ./.github/workflows/actions/docker-action
         with:
-          who-to-greet: "Foysal"
+          who-to-greet: "Foysal Ahmed"
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
