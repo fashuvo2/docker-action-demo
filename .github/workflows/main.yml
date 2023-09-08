@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Hello name action step
+      - name: Hello name action
         id: hello
         uses: ./.github/workflows/actions/docker-action
         with:
